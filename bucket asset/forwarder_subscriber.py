@@ -1,15 +1,17 @@
-import sys
 import zmq
+
 
 port = "5560"
 # Socket to talk to server
 context = zmq.Context()
-socket = context.socket(zmq.SUB)
+socket = context.socket(zmq.PULL)
 print "Collecting updates from server..."
 socket.connect ("tcp://localhost:%s" % port)
-bucket = "1"
-socket.setsockopt(zmq.SUBSCRIBE, bucket)
-while True:
-    string = socket.recv()
-    bucket, messagedata = string.split()
-    print (bucket, messagedata)
+
+string = socket.recv()
+bs = eval(string)
+bs.sort()
+print string
+print bs
+socket.send = ('%s' % bs)
+

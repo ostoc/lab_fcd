@@ -5,18 +5,40 @@ import time
 
 port = "5559"
 context = zmq.Context()
-socket = context.socket(zmq.PUB)
+socket = context.socket(zmq.PUSH)
 socket.connect("tcp://localhost:%s" % port)
-publisher_id = random.randrange(0, 9999)
-bucket = int()
+socket.connect("tcp://localhost:5565")
+timestop1 = time.clock()
+with open('test', 'r') as resouces:
+    works = resouces.readlines()
+tasks = []
+for line in works:
+    tasks.append(line.split())
+timestop2 = time.clock()
+timeslot1 = timestop2 - timestop1
+print("reading time is %s" % timeslot1)
+
+nbucket = 3
+bsize = len(tasks) / nbucket
+# define the bucket parameters
+buckets = [[] for x in range(0, nbucket)]
+split = 256 / nbucket
+for i in range(0, len(tasks)):
+    for j in range(0, nbucket):
+        if split * (j - 1) < ord(tasks[i][0][0]) < split * j:
+            buckets[j].append(tasks[i][0])
+        else:
+            ++j
+##for i in range(nbucket):
+##    buckets[i].sort()
+server_message = "sending bucket"
+print server_message
+
+
 while True:
-    works = random.randrange(1, 199)
-    work = int(works)
-    if 0 < work < 100:
-        bucket = 1
-    elif 101 < work < 200:
-        bucket = 2
-    messagedata = "work is %s in %s bucket" % (work, bucket)
-    print messagedata
-    socket.send("%d %s" % (bucket, work))
+    socket.send('%s' % buckets[1])
+    time.sleep(1)
+    socket.send('%s' % buckets[2])
+    time.sleep(1)
+    socket.send('%s' % buckets[0])
     time.sleep(1)
