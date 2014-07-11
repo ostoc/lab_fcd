@@ -27,7 +27,7 @@ int main(void) {
 		exit(EXIT_FAILURE);
 	}
 
-	size = 0x6000;
+	size = 0x0200;
 	printf("%lld\n", size);
 
 	fwrite(&size, sizeof(size), 1, out);

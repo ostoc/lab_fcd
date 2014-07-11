@@ -1,0 +1,12 @@
+Read Me:
+
+Please install the zeromq, if you don't have please run:
+> apt-get install python-zmq
+
+Change the thread number on line 7
+
+run program: 
+> python c_3sat.py
+
+Notice:
+Due to the there is not only one solution. The result depens on which thread finds soultion faster. The fastest thread will kill other thread, and print the result in term. 

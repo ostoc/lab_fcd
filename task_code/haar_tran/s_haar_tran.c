@@ -21,19 +21,17 @@ int main(int argc, char *argv[]){
       int x, y;
       long long int a, d;
       double SQRT_2;
-      fread(&size, sizeof(size), 1, in);  //从第二个数据开始读取， 不改变开头的文件大小
-      fwrite(&size, sizeof(size), 1, out);      //从第二个数据开始写入
-      int *pixels = (int *) malloc(size * size * sizeof(int)); //分配 pixel存储空间
-      if (!fread(pixels, size * size * sizeof(int), 1, in)) { //判断分配空间和读取的空间是否相同
+      fread(&size, sizeof(size), 1, in); 
+      fwrite(&size, sizeof(size), 1, out);     
+      int *pixels = (int *) malloc(size * size * sizeof(int)); 
+      if (!fread(pixels, size * size * sizeof(int), 1, in)) {
       perror("read error");
       exit(EXIT_FAILURE);
       }
-      // todo: 需要定义长宽大小
-
-// haar // 变化先做完所有的行变换然后在做列变换，
+// haar
       SQRT_2 = sqrt(4);
       for (s = size; s > 1; s /= 2) {
-            // 变换时通过两次居中对切变换 s / 2 
+     
       mid = s / 2;
       // row-transformation
       for (y = 0; y < mid; y++) {
@@ -45,8 +43,7 @@ int main(int argc, char *argv[]){
                    pixel(x,y) = a;
                    pixel(mid+x,y) = d;
             } 
-      }
-      
+      }   
       // column-transformation
       for (y = 0; y < mid; y++) {
       for (x = 0; x < mid; x++) {
