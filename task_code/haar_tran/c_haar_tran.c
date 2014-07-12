@@ -77,7 +77,7 @@ int main(int argc, char *argv[]){
       perror("read error");
       exit(EXIT_FAILURE);
       }
-			
+			// fork thread 
 			
 			if ( sem_init (&mutex_finish_task,0,0) < 0 )
 			{
@@ -234,6 +234,7 @@ int main(int argc, char *argv[]){
 			{
 				pthread_join( thread_id[i], NULL);
 			}
+			// end time
       
 printf("\nFinished\n");
 return EXIT_SUCCESS;

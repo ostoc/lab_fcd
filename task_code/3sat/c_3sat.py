@@ -4,7 +4,8 @@ import zmq
 import time
 from multiprocessing import Process
 
-nThread = 4
+nThread = raw_input('Number of threads:')
+nThread = int(nThread)
 
 with open('3sat.in', 'rb') as in_file:
     works = in_file.readlines()
@@ -37,7 +38,7 @@ for i in range(0, nCmp):
 nMax = pow(2, nVal)
 
 print('it has %d Clauses, has %d Values, max loops %d' % (nClause, nVal, nMax))
-
+time1 = time.time();
 
 def ventilator():
     context = zmq.Context()
@@ -125,6 +126,7 @@ def worker(wrk_num):
         control_message = control_receiver.recv()
         if control_message == "FINISH":
             print("Worker %i received FINISH, quitting!" % wrk_num)
+    
 
 
 
@@ -157,11 +159,13 @@ def result_manager():
             print("Work %i finish Job and no result found" % (result_message['worker']))
             continue
     control_sender.send("FINISH")
-    print('\n Shut down the workers')
+    print('\nShut down the workers')
+    time2 = time.time()
+    print(time2 - time1)
     time.sleep(3)
 
 if __name__ == "__main__":
-
+   
     # Create a pool of workers to distribute work to
     for wrk_num in range(nThread):
         Process(target=worker, args=(wrk_num,)).start()
