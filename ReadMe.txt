@@ -91,9 +91,18 @@
  ----- Task 3: Haar Wavelets -----
 
  1. Test steps:
+    - Go inside the path:
+      ¡®ÿ/xi_junyu/haar_transform/¡®
+    - Run ¡®run_haar_tran¡¯:
+      ¡®./run_haar_tran¡¯
+    - Type in the number of cores you want to use for test
+      (1, 2, 4, 8 and 16 etc), for example:
+      'Please enter the number of cores you want to use: 4'
 
  2. Check result:
-
+    The program will write the result in ¡®image.out¡¯ file.
+    Use diff to compare with the ¡®image.out¡¯ which calculated by 
+    the sequential code.
 
  ----- Task 4: Unbounded Knapsack -----
 
@@ -124,8 +133,16 @@
  ----- Task 5: 3 SAT -----
 
  1. Test steps:
-
+    - Go inside the path:
+      ¡®ÿ/xi_junyu/3sat¡¯
+    - Run the c_3sat.py code:
+      ¡®python c_3sat.py¡¯
+    - Type in the number of cores you want to use for test
+      (1, 2, 4, 8 and 16 etc), for example:
+      ¡®Number of core: 4'
  2. Check result:
+    The program will print out the results, including number
+    of threads used, the optimized result and time consumed.
 
 
  ********** Sample Test Result **********
@@ -148,8 +165,8 @@
                   |         |        |       |       |  
  Friendly Number  |  192105 | 111493 | 75482 | 47628 |  58475
                   |         |        |       |       |
- Haar Wavelets    |         |        |       |       |
+ Haar Wavelets    |   95642 |  92420 | 90168 | 88558 |  87709
                   |         |        |       |       |
  Knapsack         |  201459 | 123960 | 90056 | 91030 |  91962
                   |         |        |       |       |
- 3 SAT            |         |        |       |       |        
+ 3 SAT            |  175981 |  94769 | 48067 | 24796 |  23216       
