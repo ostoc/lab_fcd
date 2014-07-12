@@ -92,17 +92,18 @@
 
  1. Test steps:
     - Go inside the path:
-      ¡®ÿ/xi_junyu/haar_transform/¡®
-    - Run ¡®run_haar_tran¡¯:
-      ¡®./run_haar_tran¡¯
+      '../xi_junyu/haar_transform/'
+    - Run 'run_haar_tran':
+      './run_haar_tran'
     - Type in the number of cores you want to use for test
       (1, 2, 4, 8 and 16 etc), for example:
       'Please enter the number of cores you want to use: 4'
 
  2. Check result:
-    The program will write the result in ¡®image.out¡¯ file.
+    The program will write the result in 'image.out' file.
     Use diff to compare with the ¡®image.out¡¯ which calculated by 
     the sequential code.
+
 
  ----- Task 4: Unbounded Knapsack -----
 
@@ -133,16 +134,20 @@
  ----- Task 5: 3 SAT -----
 
  1. Test steps:
+
     - Go inside the path:
-      ¡®ÿ/xi_junyu/3sat¡¯
+      ¡®../xi_junyu/3sat¡¯
     - Run the c_3sat.py code:
       ¡®python c_3sat.py¡¯
     - Type in the number of cores you want to use for test
       (1, 2, 4, 8 and 16 etc), for example:
       ¡®Number of core: 4'
+
  2. Check result:
+
     The program will print out the results, including number
     of threads used, the optimized result and time consumed.
+
 
 
  ********** Sample Test Result **********
@@ -153,9 +158,9 @@
  Test cases:
  Bucket Sort: test file with 2000039 unsorted strings
  Friendly Number: 1 to 262143
- Haar Wavelets:
+ Haar Wavelets: image.in file generated with size 0x600
  Knapsack: test file with the 120 entries
- 3 SAT:
+ 3 SAT: 125 clause, 24 values in 3sat.in
 
  Time consumed in 5 tasks (average of 5 times experiments in ms):
 
