@@ -32,9 +32,9 @@
  1. Test steps:
 
     - Go inside the path:
-      '.../xi_junyu/bucket_sort/'
+      '.../task_code/bucket_sort/'
     - Run the Bucketsort_Thread.java code:
-      '.../xi_junyu/bucket_sort$java BucketSort_Thread'
+      '.../task_code/bucket_sort$java BucketSort_Thread'
     - Type in the number of cores you want to use for test
       (1, 2, 4, 8 and 16 etc), for example:
       'Please enter the number of cores you want to use: 4'
@@ -60,9 +60,9 @@
  1. Test steps:
 
     - Go inside the path:
-      '.../xi_junyu/friendly_numbers/'
+      '.../task_code/friendly_numbers/'
     - Run the Friendly_Thread.java code:
-      '.../xi_junyu/friendly_numbers$java Friendly_Thread'
+      '.../task_code/friendly_numbers$java Friendly_Thread'
     - Type in the number of cores you want to use for test (1,
       2, 4, 8 and 16 etc), for example:
       'Please enter the number of cores you want to use: 4'
@@ -92,7 +92,7 @@
 
  1. Test steps:
     - Go inside the path:
-      '../xi_junyu/haar_transform/'
+      '../task_code/haar_transform/'
     - Run 'run_haar_tran':
       './run_haar_tran'
     - Type in the number of cores you want to use for test
@@ -110,9 +110,9 @@
  1. Test steps:
 
     - Go inside the path:
-      '.../xi_junyu/knapsack/'
+      '.../task_code/knapsack/'
     - Run the Knapsack_Thread.java code:
-      '.../xi_junyu/knapsack$java Knapsack_Thread'
+      '.../task_code/knapsack$java Knapsack_Thread'
     - Type in the number of cores you want to use for test
       (1, 2, 4, 8 and 16 etc), for example:
       'Please enter the number of cores you want to use: 4'
@@ -136,7 +136,7 @@
  1. Test steps:
 
     - Go inside the path:
-      ¡®../xi_junyu/3sat¡¯
+      ¡®../task_code/3sat¡¯
     - Run the c_3sat.py code:
       ¡®python c_3sat.py¡¯
     - Type in the number of cores you want to use for test
