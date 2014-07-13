@@ -1,8 +1,0 @@
-Read Me:
-Compile code using line:
-
-> gcc c_3sat.c -lpthread
-
-Change thread in code resource
-
-Input files is image.in
